@@ -1,15 +1,16 @@
 import React, {useEffect} from "react";
 import { AiOutlineMenu } from 'react-icons/ai';
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+// import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { useStateContext } from "../contexts/ContextProvider";
 
 
 const NavButton = ({title, customFunc, icon, color, dotColor}) => (
-    <TooltipComponent content={title} position="BottomCenter">
+    // <TooltipComponent content={title} position="BottomCenter">
         <button type="button" onClick={() => customFunc()} style={{color}} className="relative text-xl rounded-full p-3 hover:bg-light-gray">
         <span style={{backgroud: dotColor}} className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"/>
         {icon}
         </button>
-    </TooltipComponent>
+    // </TooltipComponent>
 );
 
 const Navbar = () => {
@@ -35,14 +36,14 @@ const Navbar = () => {
         <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
             <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu/>} />
             <div className="flex">
-                <TooltipComponent content="Profile" position="BottomCenter">
+                {/* <TooltipComponent content="Profile" position="BottomCenter"> */}
                     <div className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg">
-                        <img className="rounded-full w-8 h-8" src="https://i.pinimg.com/564x/d2/f1/ea/d2f1ea50a33eade221eae05c430a59eb.jpg" alt="user-profile"/>
+                        <img className="rounded-full w-12 h-12" src="https://i.pinimg.com/564x/d2/f1/ea/d2f1ea50a33eade221eae05c430a59eb.jpg" alt="user-profile"/>
                         <p>
                             <span className="text-gray-400 text-14">Hello</span>
                         </p>
                     </div>
-                </TooltipComponent>
+                {/* </TooltipComponent> */}
             </div>
         </div>
     )

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom';
-import { SiGoogletranslate } from 'react-icons/si';
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import { MdOutlineCancel } from 'react-icons/md';
+import { SiGoogletranslate, SiHomeadvisor } from 'react-icons/si';
+// import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { MdHome, MdOutlineCancel } from 'react-icons/md';
 import { useStateContext } from '../contexts/ContextProvider';
 
 
@@ -15,7 +15,17 @@ const Sidebar = () => {
         }
     };
 
-    const links = [];
+    const links = [
+        {
+            title: 'Workspace',
+            links: [
+                {
+                    name: 'Home',
+                    icon: <SiHomeadvisor />
+                }
+            ]
+        }
+    ];
 
     const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2';
     const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
@@ -28,11 +38,11 @@ const Sidebar = () => {
                         <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
                             <SiGoogletranslate/> <span> Translator </span>
                         </Link>
-                        <TooltipComponent content="Menu" position="BottomCenter">
+                        {/* <TooltipComponent content="Menu" position="BottomCenter"> */}
                             <button type="button" onClick={() => setActiveMenu(!activeMenu)} style={{color: currentColor}} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden">
                                 <MdOutlineCancel/>
                             </button>
-                        </TooltipComponent>
+                        {/* </TooltipComponent> */}
                     </div>
                     <div className="mt-10">
                         {links.map((item) => (

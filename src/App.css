@@ -55,3 +55,10 @@
 .e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
     border: none;
 }
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
